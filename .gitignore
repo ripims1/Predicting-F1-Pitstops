@@ -14,3 +14,9 @@ __pycache__/
 # OS junk
 .DS_Store
 Thumbs.db
+
+# Raw and processed datasets
+data/*.csv
+
+# Kaggle submissions
+submissions/*.csv
