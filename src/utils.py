@@ -2,6 +2,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score
 
+
 # Reads data files
 # x: input dataframe, y: target value for that data, x_test: the test data without existing associated values
 def load_processed_data():
@@ -28,3 +29,7 @@ def generate_submission(raw_test_path, predictions, output_path, target_column="
 def generate_auc(y_val, predictions, decimals=4):
     auc = roc_auc_score(y_val, predictions)
     print(f"AUC: {auc:.{decimals}f}")
+
+# Generates the probability prediction given x_val and model
+def generate_probability_predict(model, x):
+    return model.predict_proba(x)[:,1]
