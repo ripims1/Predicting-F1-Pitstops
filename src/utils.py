@@ -13,13 +13,13 @@ def load_processed_data():
     return x, y, x_test
 
 # Self explanatory
-def generate_submission(raw_test_path, predictions, output_path, target_column="PitNextLap"):
+def generate_submission(predictions, output_path,raw_test_path="../data/test.csv", target_column="PitNextLap"):
 
     raw_test = pd.read_csv(raw_test_path)
     submission = pd.DataFrame({
 
     "id": raw_test["id"],
-    "PitNextLap": predictions
+    target_column: predictions
     })
 
     submission.to_csv(output_path, index=False)
