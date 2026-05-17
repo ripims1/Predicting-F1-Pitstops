@@ -9,6 +9,9 @@ def load_processed_data():
     y = pd.read_csv("../data/target.csv").squeeze()
     x_test = pd.read_csv("../data/test_encoded.csv")
 
+    return x, y, x_test
+
+# Self explanatory
 def generate_submission(raw_test_path, predictions, output_path, target_column="PitNextLap"):
 
     raw_test = pd.read_csv(raw_test_path)
@@ -21,6 +24,7 @@ def generate_submission(raw_test_path, predictions, output_path, target_column="
     submission.to_csv(output_path, index=False)
     return submission
 
+# Generates a simulated auc value given the y_val and the predictions made
 def generate_auc(y_val, predictions, decimals=4):
     auc = roc_auc_score(y_val, predictions)
     print(f"AUC: {auc:.{decimals}f}")
