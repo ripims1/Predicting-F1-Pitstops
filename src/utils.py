@@ -29,6 +29,7 @@ def generate_submission(predictions, output_path,raw_test_path="../data/test.csv
 def generate_auc(y_val, predictions, decimals=4):
     auc = roc_auc_score(y_val, predictions)
     print(f"AUC: {auc:.{decimals}f}")
+    return auc
 
 # Generates the probability prediction given x_val and model
 def generate_probability_predict(model, x):
