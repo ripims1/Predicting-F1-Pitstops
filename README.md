@@ -14,4 +14,3 @@ Kaggle Playground Series project focused on predicting Formula 1 pitstop outcome
 
 - `notebooks/` → experimentation and EDA
 - `src/` → reusable code
-- `submissions/` → Kaggle submission files
